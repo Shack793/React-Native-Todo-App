@@ -1,15 +1,13 @@
-import 'react-native-gesture-handler';
-import 'react-native-gesture-handler'; // added this line
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TodoListScreen from './src/screens/TodoListScreen';
-import TodoScreen from './src/screens/TodoScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+import TodoListScreen from '../screens/TodoListScreen';
+import TodoScreen from '../screens/TodoScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
@@ -39,16 +37,6 @@ export default function App() {
           }}
         />
       </Stack.Navigator>
-      <StatusBar style="light" />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
